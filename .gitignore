@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+build/
+coverage/
+test.log
+test.json
+local.json
+public/buid.js
+npm-debug.log
+node_modules/
