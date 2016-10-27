@@ -2,7 +2,7 @@
 
 ### Made for Headspace
 
-#### Made using React/Redux.
+#### Built using React/Redux.
 
-The Form class I made for another prototype project I was working on.
+The Form class I made for another prototype project I was working on, in case you wonder :)
  
