@@ -36,7 +36,8 @@
   },
   "scripts": {
     "babel-node": "babel-node --presets=es2015,stage-1",
-    "start-prod": "babel lib/server --out-dir build && node build/index.js",
+    "make-build": "browserify lib/client/main.js -o public/js/build.js",
+    "start-prod": "npm run make-build && babel lib/server --out-dir build && node build/index.js",
     "start-local": "nodemon --debug --exec npm run babel-node -- lib/server/index.js",
     "watch-build": "watchify lib/client/main.js -o public/js/build.js --debug --verbose"
   },

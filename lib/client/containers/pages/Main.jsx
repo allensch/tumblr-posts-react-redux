@@ -7,8 +7,9 @@ import FavoriteActions from '../../actions/favorite_actions'
 class Main extends Component {
 
     static mapStateToProps(state) {
-        const { content, results } = state.posts
+        const { content, results, isFetching } = state.posts
         return {
+            isFetching,
             posts: results.map(id => {
                 return content.get(id).toJS()
             }).toArray()
@@ -39,18 +40,18 @@ class Main extends Component {
     }
 
     renderContent() {
-        const { posts } = this.props
-        if (posts && posts.length) {
+        const { isFetching, posts } = this.props
+        if (isFetching) {
+            return <Loader position="absolute" hwaccel={true} isLoading={true} />
+        } else if (posts && posts.length) {
             return this.renderPosts()
         }
         return this.renderNoPosts()
     }
 
     render() {
-        const { isFetching } = this.props
         return (
             <div className="container">
-                <Loader position="absolute" scale=".5" hwaccel={true} isLoading={isFetching} />
                 <div className="row">
                     {this.renderContent()}
                 </div>

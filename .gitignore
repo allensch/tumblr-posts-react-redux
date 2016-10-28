@@ -5,6 +5,6 @@ coverage/
 test.log
 test.json
 local.json
-public/buid.js
+public/js/build.js
 npm-debug.log
 node_modules/
