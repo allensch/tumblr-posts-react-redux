@@ -21,4 +21,9 @@ You will need to create a `local.json` file placed at the root directory that lo
 
 }
 ```
- 
+Then you can
+```
+npm run start-prod
+```
+
+It will create both client and server builds via Babel/Browserify and start the local server on the `HTTP_PORT` you specified.
